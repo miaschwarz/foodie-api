@@ -1,0 +1,5 @@
+DB_HOST=207.154.199.178
+DB_PORT=3306
+DB_USER=deploy
+DB_PASS=hGZbV+jb8Oh8
+DB_NAME=restaurants
