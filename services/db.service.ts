@@ -113,7 +113,6 @@ export class DBService {
     let user = await User.findOne({
       where: where
     })
-    console.log(user);
     return user;
   }
 
@@ -136,13 +135,16 @@ export class DBService {
   static async loadReviews(uid, rid) {
 
     let where = {
-      user_id: uid,
-      restaurant_id: rid
+      user_id: uid
+    }
+    if (rid) {
+      where['restaurant_id'] = rid
     }
     let reviews = await Review.findAll({
       where: where,
       limit: 10
     })
+    console.log(rid, uid, where);
     return reviews;
   }
 
